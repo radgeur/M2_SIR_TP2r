@@ -12,6 +12,7 @@ public class Matrices {
 	private File themesFile = new File("Themes.txt");
 	private File mutFile = new File("Mut.txt");
 	private File mutBinaireFile = new File("Mut_binaire.txt");
+	private File mutDistanceThemesFile = new File("Mtt.txt");
 
 	/**
 	 * create the Mut matrix
@@ -63,7 +64,6 @@ public class Matrices {
 		while(scan.hasNext()) {
 			currentLine = scan.next();
 			splitLine = currentLine.split(";");
-			System.out.println();
 			mut[usersList.indexOf(splitLine[1])][themesList.indexOf(splitLine[2])] = mut[usersList.indexOf(splitLine[1])][themesList.indexOf(splitLine[2])] + 1;
 		}
 		
@@ -80,7 +80,10 @@ public class Matrices {
 		scan.close();
 	}
 	
-	
+	/**
+	 * create the binary Mut matrix
+	 * @throws IOException
+	 */
 	public void mut_binaire() throws IOException{
 		Scanner scan = new Scanner(mutFile);
 		String currentLine;
@@ -106,4 +109,56 @@ public class Matrices {
 		mutBinaireOutput.close();
 		scan.close();
 	}
+	
+	/**
+	 * create the mtt in Mtt.txt
+	 * @throws IOException
+	 */
+	public void mut_distance_themes() throws IOException {
+		int matrix[][] = new int[9][5];
+		Scanner scan = new Scanner(mutBinaireFile);
+		String currentLine;
+		String splitLine[];
+		
+		//To can write into the files
+		FileWriter mttFw = new FileWriter(mutDistanceThemesFile);
+		BufferedWriter mttOutput = new BufferedWriter(mttFw);
+		
+		//fill the matrix
+		while(scan.hasNext()){
+			currentLine = scan.next();
+			splitLine = currentLine.split(";");
+			for(int i=0; i<matrix.length;i++){
+				for(int j=0;j<matrix[0].length;j++){
+					matrix[0][j] = Integer.parseInt(splitLine[j]);
+					
+				}
+			}
+		}
+		scan.close();
+		
+		//write into Mtt.txt
+		for(int i=0;i<matrix[0].length;i++){
+			for(int j=0;j<matrix[0].length;j++){
+				float union = 0;
+				float intersection = 0;
+				for(int k=0;k<matrix.length;k++){
+					if(matrix[k][i] == 1 && matrix[k][j]==1){
+						union++;
+						intersection++;
+					}
+					else if(matrix[k][i] == 1 || matrix[k][j]==1)
+						union++;
+				}
+				if(union!=0)
+					mttOutput.write(1-(intersection/union) + ";");
+				else
+					mttOutput.write(0 + ";");
+			}
+			mttOutput.write("\n");
+		}
+		mttOutput.close();
+	}
+	
+	
 }

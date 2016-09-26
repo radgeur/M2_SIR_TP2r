@@ -8,6 +8,7 @@ public class Main {
 		Matrices matrix = new Matrices();
 		matrix.mut();
 		matrix.mut_binaire();
+		matrix.mut_distance_themes();
 	}
 	
 	
