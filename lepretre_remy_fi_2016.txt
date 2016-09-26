@@ -1,0 +1,70 @@
+******************************************************************************************
+******* Ce fichier est à renomer "nom_prenom_fi_2016.txt" et à uploader sur le site ******
+******* https://www.iut-info.univ-lille1.fr/~lancieri/upload.html ************************
+******************************************************************************************
+
+Nom:LEPRETRE
+Prénom: Rémy
+
+
+****************** mettre ci-dessous la matrice Mut ****************
+
+20;20;0;0;0;
+20;20;0;20;0;
+0;0;20;0;20;
+20;0;0;20;0;
+0;0;20;0;20;
+0;20;0;0;0;
+0;0;20;20;20;
+0;20;0;0;0;
+20;0;20;0;0;
+
+
+****************** mettre ci-dessous la matrice Mut-binaire *********
+
+1;1;0;0;0;
+1;1;0;1;0;
+0;0;1;0;1;
+1;0;0;1;0;
+0;0;1;0;1;
+0;1;0;0;0;
+0;0;1;1;1;
+0;1;0;0;0;
+1;0;1;0;0;
+
+
+****************** mettre ci-dessous la matrice Mtt ******************
+
+
+
+****************** mettre ci-dessous la matrice Mtt-binaire **********
+
+
+
+****************** mettre ci-dessous la matrice Mut ******************
+
+
+
+****************** mettre ci-dessous la matrice MutR *****************
+
+
+
+
+****************** mettre ci-dessous la liste des recomendations *****
+
+par exemple
+
+Paul -> bricolage
+Pierre -> informatique
+Julie -> jardinage
+
+****************** mettre ci-dessous votre compte rendu ****************
+
+
+
+
+
+********* Mettre ci-dessous le code soure de votre programme avec commentaires *********
+
+
+
