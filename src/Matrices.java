@@ -125,15 +125,14 @@ public class Matrices {
 		BufferedWriter mttOutput = new BufferedWriter(mttFw);
 		
 		//fill the matrix
+		int user=0;
 		while(scan.hasNext()){
 			currentLine = scan.next();
 			splitLine = currentLine.split(";");
-			for(int i=0; i<matrix.length;i++){
-				for(int j=0;j<matrix[0].length;j++){
-					matrix[0][j] = Integer.parseInt(splitLine[j]);
-					
-				}
+			for(int j=0;j<matrix[0].length;j++){
+				matrix[user][j] = Integer.parseInt(splitLine[j]);				
 			}
+			user++;
 		}
 		scan.close();
 		
